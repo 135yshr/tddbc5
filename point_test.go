@@ -7,8 +7,8 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("Point", func() {
-	Describe("平面座標上の点", func() {
+var _ = Describe("平面座標上の点", func() {
+	Describe("座業を作成する", func() {
 		var p Point
 		Context("xに1 yに1を渡したとき", func() {
 			BeforeEach(func() {
