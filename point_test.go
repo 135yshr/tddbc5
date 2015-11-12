@@ -24,6 +24,10 @@ var _ = Describe("Point", func() {
 				p := Point{X: 2, Y: 3}
 				Expect(p.X).To(Equal(2))
 			})
+			It("yが3になること", func() {
+				p := Point{X: 2, Y: 3}
+				Expect(p.Y).To(Equal(3))
+			})
 		})
 	})
 })
