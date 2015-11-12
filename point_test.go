@@ -19,5 +19,11 @@ var _ = Describe("Point", func() {
 				Expect(p.Y).To(Equal(1))
 			})
 		})
+		Context("xに2 yに3を渡したとき", func() {
+			It("xが2になること", func() {
+				p := Point{X: 2, Y: 3}
+				Expect(p.X).To(Equal(2))
+			})
+		})
 	})
 })
