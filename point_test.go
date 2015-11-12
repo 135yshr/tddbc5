@@ -36,6 +36,8 @@ var _ = Describe("平面座標上の点", func() {
 	Describe("座業が隣り合っていることを確認する", func() {
 		Context("座標A(1,1)と座業B(1,2)が存在するとき", func() {
 			It("座標Aと座標Bが隣り合っていること", func() {
+				a := Point{1, 1}
+				b := Point{1, 2}
 				Expect(a.IsNeighbor(b)).To(BeTrue())
 			})
 		})
