@@ -6,5 +6,8 @@ type Point struct {
 }
 
 func (p *Point) IsNeighbor(p2 Point) bool {
+	if p.X != p2.X && p.Y != p2.Y {
+		return false
+	}
 	return true
 }

@@ -41,5 +41,12 @@ var _ = Describe("平面座標上の点", func() {
 				Expect(a.IsNeighbor(b)).To(BeTrue())
 			})
 		})
+		Context("座標A(1,1)と座標B(2,2)が存在するとき", func() {
+			It("座標Aと座標Bは隣り合っていないこと", func() {
+				a := Point{1, 1}
+				b := Point{2, 2}
+				Expect(a.IsNeighbor(b)).To(BeFalse())
+			})
+		})
 	})
 })
