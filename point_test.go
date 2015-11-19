@@ -38,10 +38,10 @@ var _ = Describe("格子点", func() {
 			sut := GridPoint{4, 7}
 			Expect(sut.NeighborOf(a)).To(BeTrue())
 		},
-		Entry("(4,7) (3,7)", GridPoint{3, 7}),
-		Entry("(4,7) (5,7)", GridPoint{5, 7}),
-		Entry("(4,7) (4,6)", GridPoint{4, 6}),
-		Entry("(4,7) (4,8)", GridPoint{4, 8}),
+		Entry("１つ左の格子点", GridPoint{3, 7}),
+		Entry("１つ右の格子点", GridPoint{5, 7}),
+		Entry("１つ上の格子点", GridPoint{4, 6}),
+		Entry("１つ下の格子点", GridPoint{4, 8}),
 	)
 	DescribeTable("２つの格子点が隣り合っていないこと",
 		func(sut, other GridPoint) {
