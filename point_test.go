@@ -53,7 +53,7 @@ var _ = Describe("格子点", func() {
 			})
 		})
 	})
-	DescribeTable("２つの格子点が隣り合っているか判定する",
+	DescribeTable("２つの格子点が隣り合っていること",
 		func(sut, other GridPoint) {
 			Expect(sut.NeighborOf(other)).To(BeTrue())
 		},
@@ -61,6 +61,12 @@ var _ = Describe("格子点", func() {
 		Entry("(4,7) (5,7)", GridPoint{4, 7}, GridPoint{5, 7}),
 		Entry("(4,7) (4,6)", GridPoint{4, 7}, GridPoint{4, 6}),
 		Entry("(4,7) (4,8)", GridPoint{4, 7}, GridPoint{4, 8}),
+	)
+	DescribeTable("２つの格子点が隣り合っていないこと",
+		func(sut, other GridPoint) {
+			Expect(sut.NeighborOf(other)).To(BeFalse())
+		},
+		Entry("(4,7) (3,6)", GridPoint{4, 7}, GridPoint{3, 6}),
 	)
 	Describe("２つの格子点が隣り合っているか判定する", func() {
 		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
