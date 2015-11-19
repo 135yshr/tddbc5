@@ -2,6 +2,7 @@ package tddbc5
 
 import (
 	"fmt"
+	"math"
 )
 
 type GridPoint struct {
@@ -30,4 +31,10 @@ func (g *GridPoint) verticalOf(o GridPoint) bool {
 
 func (g *GridPoint) horizontalOf(o GridPoint) bool {
 	return (g.Y == o.Y-1 || g.Y == o.Y+1)
+}
+
+func (g *GridPoint) verticalDistance(o GridPoint) int {
+
+	f := math.Abs(float64(g.X) - float64(o.X))
+	return int(f)
 }
