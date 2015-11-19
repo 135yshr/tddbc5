@@ -19,9 +19,6 @@ func (g *GridPoint) HasSameCoordinatesWith(o GridPoint) bool {
 }
 
 func (g *GridPoint) IsNeighborOf(o GridPoint) bool {
-	if g.HasSameCoordinatesWith(o) {
-		return false
-	}
 	return g.verticalDistance(o) == 1 && g.Y == o.Y || g.horizontalDistance(o) == 1 && g.X == o.X
 }
 
