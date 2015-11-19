@@ -72,13 +72,4 @@ var _ = Describe("格子点", func() {
 		Entry("(4,7) (5,8)", GridPoint{4, 7}, GridPoint{5, 8}),
 		Entry("(4,7) (4,7)", GridPoint{4, 7}, GridPoint{4, 7}),
 	)
-	Describe("２つの格子点が隣り合っているか判定する", func() {
-		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{4, 7}
-				Expect(sut.NeighborOf(other)).To(BeFalse())
-			})
-		})
-	})
 })
