@@ -22,7 +22,7 @@ func (g *GridPoint) NeighborOf(o GridPoint) bool {
 	if g.SameCoordinatesWith(o) {
 		return false
 	}
-	return g.verticalOf(o) && g.Y == o.Y || g.horizontalOf(o) && g.X == o.X
+	return g.verticalDistance(o) == 1 && g.Y == o.Y || g.horizontalOf(o) && g.X == o.X
 }
 
 func (g *GridPoint) verticalOf(o GridPoint) bool {
