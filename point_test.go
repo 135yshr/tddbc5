@@ -48,10 +48,10 @@ var _ = Describe("格子点", func() {
 			sut := GridPoint{4, 7}
 			Expect(sut.NeighborOf(a)).To(BeFalse())
 		},
-		Entry("(4,7) (3,6)", GridPoint{3, 6}),
-		Entry("(4,7) (3,8)", GridPoint{3, 8}),
-		Entry("(4,7) (5,6)", GridPoint{5, 6}),
-		Entry("(4,7) (5,8)", GridPoint{5, 8}),
-		Entry("(4,7) (4,7)", GridPoint{4, 7}),
+		Entry("左下の格子点", GridPoint{3, 6}),
+		Entry("左上の格子点", GridPoint{3, 8}),
+		Entry("右下の格子点", GridPoint{5, 6}),
+		Entry("右上の格子点", GridPoint{5, 8}),
+		Entry("同じ座標の格子点", GridPoint{4, 7}),
 	)
 })
