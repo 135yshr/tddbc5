@@ -25,10 +25,6 @@ func (g *GridPoint) NeighborOf(o GridPoint) bool {
 	return g.verticalDistance(o) == 1 && g.Y == o.Y || g.horizontalDistance(o) == 1 && g.X == o.X
 }
 
-func (g *GridPoint) verticalOf(o GridPoint) bool {
-	return (g.X == o.X-1 || g.X == o.X+1)
-}
-
 func (g *GridPoint) verticalDistance(o GridPoint) int {
 	return distance(g.X, o.X)
 }
