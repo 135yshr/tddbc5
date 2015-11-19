@@ -16,3 +16,7 @@ func (g *GridPoint) Notation() string {
 func (g *GridPoint) SameCoordinatesWith(other GridPoint) bool {
 	return g.X == other.X && g.Y == other.Y
 }
+
+func (g *GridPoint) NeighborOf(other GridPoint) bool {
+	return false
+}

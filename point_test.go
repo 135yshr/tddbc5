@@ -52,4 +52,13 @@ var _ = Describe("格子点", func() {
 			})
 		})
 	})
+	Describe("２つの格子点が隣り合っているか判定する", func() {
+		Context("格子点oneが(4,7)、格子点otherが(4,8)のとき", func() {
+			It("格子点oneと格子点otherは隣なっていること", func() {
+				sut := GridPoint{4, 7}
+				other := GridPoint{4, 8}
+				Expect(sut.NeighborOf(other)).To(BeTrue())
+			})
+		})
+	})
 })
