@@ -23,3 +23,7 @@ func (g *GridPoint) NeighborOf(other GridPoint) bool {
 	}
 	return (g.X == other.X-1 || g.X == other.X+1) && g.Y == other.Y || (g.Y == other.Y-1 || g.Y == other.Y+1) && g.X == other.X
 }
+
+func (g *GridPoint) VerticalOf(o GridPoint) bool {
+	return (g.X == o.X-1 || g.X == o.X+1)
+}
