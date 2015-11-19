@@ -29,10 +29,6 @@ func (g *GridPoint) verticalOf(o GridPoint) bool {
 	return (g.X == o.X-1 || g.X == o.X+1)
 }
 
-func (g *GridPoint) horizontalOf(o GridPoint) bool {
-	return (g.Y == o.Y-1 || g.Y == o.Y+1)
-}
-
 func (g *GridPoint) verticalDistance(o GridPoint) int {
 	return distance(g.X, o.X)
 }
