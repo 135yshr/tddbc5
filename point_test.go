@@ -4,6 +4,7 @@ import (
 	. "github.com/135yshr/tddbc5"
 
 	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/ginkgo/extensions/table"
 	. "github.com/onsi/gomega"
 )
 
@@ -52,6 +53,11 @@ var _ = Describe("格子点", func() {
 			})
 		})
 	})
+	DescribeTable("２つの格子点が隣り合っているか判定する",
+		func(sut, other GridPoint) {
+			Expect(sut.NeighborOf(other)).To(BeTrue())
+		},
+		Entry("(4,7) (4,8)", GridPoint{4, 7}, GridPoint{4, 8}))
 	Describe("２つの格子点が隣り合っているか判定する", func() {
 		Context("格子点oneが(4,7)、格子点otherが(4,8)のとき", func() {
 			It("格子点oneと格子点otherは隣なっていること", func() {
