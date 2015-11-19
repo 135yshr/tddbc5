@@ -12,3 +12,7 @@ type GridPoint struct {
 func (g *GridPoint) Notation() string {
 	return fmt.Sprintf("(%d,%d)", g.X, g.Y)
 }
+
+func (g *GridPoint) SameCoordinatesWith(other GridPoint) bool {
+	return g.X == other.X && g.Y == other.Y
+}
