@@ -63,34 +63,6 @@ var _ = Describe("格子点", func() {
 		Entry("(4,7) (4,8)", GridPoint{4, 7}, GridPoint{4, 8}),
 	)
 	Describe("２つの格子点が隣り合っているか判定する", func() {
-		Context("格子点oneが(4,7)、格子点otherが(4,8)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{4, 8}
-				Expect(sut.NeighborOf(other)).To(BeTrue())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(4,6)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{4, 6}
-				Expect(sut.NeighborOf(other)).To(BeTrue())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(3,7)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{3, 7}
-				Expect(sut.NeighborOf(other)).To(BeTrue())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(5,7)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{5, 7}
-				Expect(sut.NeighborOf(other)).To(BeTrue())
-			})
-		})
 		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
 			It("格子点oneと格子点otherは隣なっていないこと", func() {
 				sut := GridPoint{4, 7}
