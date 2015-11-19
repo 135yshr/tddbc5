@@ -31,9 +31,16 @@ var _ = Describe("格子点", func() {
 			})
 		})
 		Context("格子点Aが(4,7)、格子点Bが(10, 8)のとき", func() {
-			It("格子点Aと格子点Bが同じ座標を持っていないこと", func() {
+			It("格子点Aと格子点Bが異なる座標を持っていないこと", func() {
 				a := GridPoint{4, 7}
 				b := GridPoint{10, 8}
+				Expect(a.SameCoordinatesWith(b)).To(BeFalse())
+			})
+		})
+		Context("格子点Aが(4,7)、格子点Bが(4, 9)のとき", func() {
+			It("格子点Aと格子点Bが異なる座標を持っていること", func() {
+				a := GridPoint{4, 7}
+				b := GridPoint{4, 9}
 				Expect(a.SameCoordinatesWith(b)).To(BeFalse())
 			})
 		})
