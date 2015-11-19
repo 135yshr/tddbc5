@@ -19,15 +19,15 @@ func (g *GridPoint) HasSameCoordinatesWith(o GridPoint) bool {
 }
 
 func (g *GridPoint) IsNeighborOf(o GridPoint) bool {
-	return g.verticalDistance(o) == 1 && g.Y == o.Y || g.horizontalDistance(o) == 1 && g.X == o.X
+	return g.horizontalDistance(o) == 1 && g.Y == o.Y || g.verticalDistance(o) == 1 && g.X == o.X
 }
 
 func (g *GridPoint) verticalDistance(o GridPoint) int {
-	return distance(g.X, o.X)
+	return distance(g.Y, o.Y)
 }
 
 func (g *GridPoint) horizontalDistance(o GridPoint) int {
-	return distance(g.Y, o.Y)
+	return distance(g.X, o.X)
 }
 
 func distance(n, m int) int {
