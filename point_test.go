@@ -60,6 +60,13 @@ var _ = Describe("格子点", func() {
 				Expect(sut.NeighborOf(other)).To(BeTrue())
 			})
 		})
+		Context("格子点oneが(4,7)、格子点otherが(4,6)のとき", func() {
+			It("格子点oneと格子点otherは隣なっていること", func() {
+				sut := GridPoint{4, 7}
+				other := GridPoint{4, 6}
+				Expect(sut.NeighborOf(other)).To(BeTrue())
+			})
+		})
 		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
 			It("格子点oneと格子点otherは隣なっていないこと", func() {
 				sut := GridPoint{4, 7}
