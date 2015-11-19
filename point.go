@@ -37,6 +37,6 @@ func (g *GridPoint) horizontalDistance(a GridPoint) int {
 }
 
 func distance(f, t int) int {
-	r := math.Abs(float64(f) - float64(t))
-	return int(r)
+	d := math.Abs(float64(f) - float64(t))
+	return int(d)
 }
