@@ -26,29 +26,29 @@ var _ = Describe("格子点", func() {
 		Context("格子点Aが(4,7)、格子点Bが(4,7)のとき", func() {
 			It("格子点Aと格子点Bが同じを持っていること", func() {
 				sut := GridPoint{4, 7}
-				b := GridPoint{4, 7}
-				Expect(sut.SameCoordinatesWith(b)).To(BeTrue())
+				other := GridPoint{4, 7}
+				Expect(sut.SameCoordinatesWith(other)).To(BeTrue())
 			})
 		})
 		Context("格子点Aが(4,7)、格子点Bが(10, 8)のとき", func() {
 			It("格子点Aと格子点Bが異なる座標を持っていないこと", func() {
 				sut := GridPoint{4, 7}
-				b := GridPoint{10, 8}
-				Expect(sut.SameCoordinatesWith(b)).To(BeFalse())
+				other := GridPoint{10, 8}
+				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
 			})
 		})
 		Context("格子点Aが(4,7)、格子点Bが(4, 9)のとき", func() {
 			It("格子点Aと格子点Bが異なる座標を持っていること", func() {
 				sut := GridPoint{4, 7}
-				b := GridPoint{4, 9}
-				Expect(sut.SameCoordinatesWith(b)).To(BeFalse())
+				other := GridPoint{4, 9}
+				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
 			})
 		})
 		Context("格子点Aが(4,7)、格子点Bが(10, 7)のとき", func() {
 			It("格子点Aと格子点Bが異なる座標を持っていること", func() {
 				sut := GridPoint{4, 7}
-				b := GridPoint{10, 7}
-				Expect(sut.SameCoordinatesWith(b)).To(BeFalse())
+				other := GridPoint{10, 7}
+				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
 			})
 		})
 	})
