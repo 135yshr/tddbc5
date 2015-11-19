@@ -22,4 +22,13 @@ var _ = Describe("格子点", func() {
 			})
 		})
 	})
+	Describe("２つの格子点が同じ座標を持つか判定する", func() {
+		Context("格子点Aが(4,7)、格子点Bが(4,7)のとき", func() {
+			It("格子点Aと格子点Bが同じであること", func() {
+				a := GridPoint{4, 7}
+				b := GridPoint{4, 7}
+				Expect(a.SameCoordinatesWith(b)).To(BeTrue())
+			})
+		})
+	})
 })
