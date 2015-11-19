@@ -23,53 +23,35 @@ var _ = Describe("格子点", func() {
 			})
 		})
 	})
-	Describe("２つの格子点が同じ座標を持つか判定する", func() {
-		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
-			It("格子点oneと格子点otherが同じを持っていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{4, 7}
-				Expect(sut.SameCoordinatesWith(other)).To(BeTrue())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(10, 8)のとき", func() {
-			It("格子点oneと格子点otherが異なる座標を持っていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{10, 8}
-				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(4, 9)のとき", func() {
-			It("格子点oneと格子点otherが異なる座標を持っていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{4, 9}
-				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(10, 7)のとき", func() {
-			It("格子点oneと格子点otherが異なる座標を持っていること", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{10, 7}
-				Expect(sut.SameCoordinatesWith(other)).To(BeFalse())
-			})
-		})
-	})
-	DescribeTable("２つの格子点が隣り合っていること",
-		func(sut, other GridPoint) {
-			Expect(sut.NeighborOf(other)).To(BeTrue())
+	DescribeTable("２つの格子点が同じ座標を持つか判定する",
+		func(a GridPoint, expected bool) {
+			sut := GridPoint{4, 7}
+			Expect(sut.HasSameCoordinatesWith(a)).To(Equal(expected))
 		},
-		Entry("(4,7) (3,7)", GridPoint{4, 7}, GridPoint{3, 7}),
-		Entry("(4,7) (5,7)", GridPoint{4, 7}, GridPoint{5, 7}),
-		Entry("(4,7) (4,6)", GridPoint{4, 7}, GridPoint{4, 6}),
-		Entry("(4,7) (4,8)", GridPoint{4, 7}, GridPoint{4, 8}),
+		Entry("対象と同じ座標を持つ格子点", GridPoint{4, 7}, true),
+		Entry("全く異なる座標を持つ格子点", GridPoint{10, 8}, false),
+		Entry("Y座標が１つ違う格子点", GridPoint{4, 8}, false),
+		Entry("X座標が１つ違う格子点", GridPoint{3, 7}, false),
+	)
+	DescribeTable("２つの格子点が隣り合っていること",
+		func(a GridPoint) {
+			sut := GridPoint{4, 7}
+			Expect(sut.IsNeighborOf(a)).To(BeTrue())
+		},
+		Entry("１つ左の格子点", GridPoint{3, 7}),
+		Entry("１つ右の格子点", GridPoint{5, 7}),
+		Entry("１つ上の格子点", GridPoint{4, 6}),
+		Entry("１つ下の格子点", GridPoint{4, 8}),
 	)
 	DescribeTable("２つの格子点が隣り合っていないこと",
-		func(sut, other GridPoint) {
-			Expect(sut.NeighborOf(other)).To(BeFalse())
+		func(a GridPoint) {
+			sut := GridPoint{4, 7}
+			Expect(sut.IsNeighborOf(a)).To(BeFalse())
 		},
-		Entry("(4,7) (3,6)", GridPoint{4, 7}, GridPoint{3, 6}),
-		Entry("(4,7) (3,8)", GridPoint{4, 7}, GridPoint{3, 8}),
-		Entry("(4,7) (5,6)", GridPoint{4, 7}, GridPoint{5, 6}),
-		Entry("(4,7) (5,8)", GridPoint{4, 7}, GridPoint{5, 8}),
-		Entry("(4,7) (4,7)", GridPoint{4, 7}, GridPoint{4, 7}),
+		Entry("左下の格子点", GridPoint{3, 6}),
+		Entry("左上の格子点", GridPoint{3, 8}),
+		Entry("右下の格子点", GridPoint{5, 6}),
+		Entry("右上の格子点", GridPoint{5, 8}),
+		Entry("同じ座標の格子点", GridPoint{4, 7}),
 	)
 })
