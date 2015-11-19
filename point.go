@@ -18,5 +18,5 @@ func (g *GridPoint) SameCoordinatesWith(other GridPoint) bool {
 }
 
 func (g *GridPoint) NeighborOf(other GridPoint) bool {
-	return true
+	return g.SameCoordinatesWith(other) == false
 }
