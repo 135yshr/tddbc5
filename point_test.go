@@ -79,33 +79,5 @@ var _ = Describe("格子点", func() {
 				Expect(sut.NeighborOf(other)).To(BeFalse())
 			})
 		})
-		Context("格子点oneが(4,7)、格子点otherが(3,6)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{3, 6}
-				Expect(sut.NeighborOf(other)).To(BeFalse())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(3,6)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{5, 6}
-				Expect(sut.NeighborOf(other)).To(BeFalse())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(3,8)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{3, 8}
-				Expect(sut.NeighborOf(other)).To(BeFalse())
-			})
-		})
-		Context("格子点oneが(4,7)、格子点otherが(5,8)のとき", func() {
-			It("格子点oneと格子点otherは隣なっていないこと", func() {
-				sut := GridPoint{4, 7}
-				other := GridPoint{5, 8}
-				Expect(sut.NeighborOf(other)).To(BeFalse())
-			})
-		})
 	})
 })
