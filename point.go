@@ -18,7 +18,7 @@ func (g *GridPoint) HasSameCoordinatesWith(o GridPoint) bool {
 	return g.X == o.X && g.Y == o.Y
 }
 
-func (g *GridPoint) NeighborOf(o GridPoint) bool {
+func (g *GridPoint) IsNeighborOf(o GridPoint) bool {
 	if g.HasSameCoordinatesWith(o) {
 		return false
 	}
