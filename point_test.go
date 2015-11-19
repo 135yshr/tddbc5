@@ -26,7 +26,7 @@ var _ = Describe("格子点", func() {
 	DescribeTable("２つの格子点が同じ座標を持つか判定する",
 		func(a GridPoint, expected bool) {
 			sut := GridPoint{4, 7}
-			Expect(sut.SameCoordinatesWith(a)).To(Equal(expected))
+			Expect(sut.HasSameCoordinatesWith(a)).To(Equal(expected))
 		},
 		Entry("対象と同じ座標を持つ格子点", GridPoint{4, 7}, true),
 		Entry("全く異なる座標を持つ格子点", GridPoint{10, 8}, false),
