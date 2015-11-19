@@ -27,3 +27,7 @@ func (g *GridPoint) NeighborOf(other GridPoint) bool {
 func (g *GridPoint) VerticalOf(o GridPoint) bool {
 	return (g.X == o.X-1 || g.X == o.X+1)
 }
+
+func (g *GridPoint) HorizontalOf(o GridPoint) bool {
+	return (g.Y == o.Y-1 || g.Y == o.Y+1)
+}
