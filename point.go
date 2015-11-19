@@ -21,10 +21,10 @@ func (g *GridPoint) NeighborOf(other GridPoint) bool {
 	if g.SameCoordinatesWith(other) {
 		return false
 	}
-	return g.VerticalOf(other) && g.Y == other.Y || g.HorizontalOf(other) && g.X == other.X
+	return g.verticalOf(other) && g.Y == other.Y || g.HorizontalOf(other) && g.X == other.X
 }
 
-func (g *GridPoint) VerticalOf(o GridPoint) bool {
+func (g *GridPoint) verticalOf(o GridPoint) bool {
 	return (g.X == o.X-1 || g.X == o.X+1)
 }
 
