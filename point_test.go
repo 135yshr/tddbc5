@@ -7,52 +7,12 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("平面座標上の点", func() {
-	Describe("座業を作成する", func() {
-		var p Point
-		Context("xに1 yに1を渡したとき", func() {
-			BeforeEach(func() {
-				p = Point{X: 1, Y: 1}
-			})
-			It("xが1になること", func() {
-				Expect(p.X).To(Equal(1))
-			})
-			It("yが1になること", func() {
-				Expect(p.Y).To(Equal(1))
-			})
-		})
-		Context("xに2 yに3を渡したとき", func() {
-			BeforeEach(func() {
-				p = Point{X: 2, Y: 3}
-			})
-			It("xが2になること", func() {
-				Expect(p.X).To(Equal(2))
-			})
-			It("yが3になること", func() {
-				Expect(p.Y).To(Equal(3))
-			})
-		})
-	})
-	Describe("座業が隣り合っていることを確認する", func() {
-		Context("座標A(1,1)と座標B(1,2)が存在するとき", func() {
-			It("座標Aと座標Bが隣り合っていること", func() {
-				a := Point{1, 1}
-				b := Point{1, 2}
-				Expect(a.IsNeighbor(b)).To(BeTrue())
-			})
-		})
-		Context("座標A(1,1)と座標B(2,1)が存在するとき", func() {
-			It("座標Aと座標Bが隣り合っていること", func() {
-				a := Point{1, 1}
-				b := Point{2, 1}
-				Expect(a.IsNeighbor(b)).To(BeTrue())
-			})
-		})
-		Context("座標A(1,1)と座標B(2,2)が存在するとき", func() {
-			It("座標Aと座標Bは隣り合っていないこと", func() {
-				a := Point{1, 1}
-				b := Point{2, 2}
-				Expect(a.IsNeighbor(b)).To(BeFalse())
+var _ = Describe("格子点", func() {
+	Describe("格子点を文字列で表す", func() {
+		Context("座標Xが4、座標Yが7の格子点を作成する", func() {
+			It("文字列表記が(4,7)になること", func() {
+				sut := GridPoint{4, 7}
+				Expect(sut.Notation()).To(Equal("(4,7))"))
 			})
 		})
 	})
