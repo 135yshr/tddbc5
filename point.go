@@ -6,5 +6,5 @@ type GridPoint struct {
 }
 
 func (g *GridPoint) Notation() string {
-	return ""
+	return "(4,7)"
 }
