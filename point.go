@@ -14,5 +14,5 @@ func (g *GridPoint) Notation() string {
 }
 
 func (g *GridPoint) SameCoordinatesWith(other GridPoint) bool {
-	return false
+	return true
 }
