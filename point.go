@@ -14,26 +14,26 @@ func (g *GridPoint) Notation() string {
 	return fmt.Sprintf("(%d,%d)", g.X, g.Y)
 }
 
-func (g *GridPoint) HasSameCoordinatesWith(o GridPoint) bool {
-	return g.X == o.X && g.Y == o.Y
+func (g *GridPoint) HasSameCoordinatesWith(a GridPoint) bool {
+	return g.X == a.X && g.Y == a.Y
 }
 
-func (g *GridPoint) IsNeighborOf(o GridPoint) bool {
-	if g.horizontalDistance(o) == 1 && g.verticalDistance(o) == 0 {
+func (g *GridPoint) IsNeighborOf(a GridPoint) bool {
+	if g.horizontalDistance(a) == 1 && g.verticalDistance(a) == 0 {
 		return true
 	}
-	if g.horizontalDistance(o) == 0 && g.verticalDistance(o) == 1 {
+	if g.horizontalDistance(a) == 0 && g.verticalDistance(a) == 1 {
 		return true
 	}
 	return false
 }
 
-func (g *GridPoint) verticalDistance(o GridPoint) int {
-	return distance(g.Y, o.Y)
+func (g *GridPoint) verticalDistance(a GridPoint) int {
+	return distance(g.Y, a.Y)
 }
 
-func (g *GridPoint) horizontalDistance(o GridPoint) int {
-	return distance(g.X, o.X)
+func (g *GridPoint) horizontalDistance(a GridPoint) int {
+	return distance(g.X, a.X)
 }
 
 func distance(n, m int) int {
