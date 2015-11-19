@@ -69,6 +69,7 @@ var _ = Describe("格子点", func() {
 		Entry("(4,7) (3,6)", GridPoint{4, 7}, GridPoint{3, 6}),
 		Entry("(4,7) (3,8)", GridPoint{4, 7}, GridPoint{3, 8}),
 		Entry("(4,7) (5,6)", GridPoint{4, 7}, GridPoint{5, 6}),
+		Entry("(4,7) (5,8)", GridPoint{4, 7}, GridPoint{5, 8}),
 	)
 	Describe("２つの格子点が隣り合っているか判定する", func() {
 		Context("格子点oneが(4,7)、格子点otherが(4,7)のとき", func() {
